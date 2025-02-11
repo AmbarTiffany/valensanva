@@ -8,8 +8,7 @@ import json
 
 # Cargar la clave de API de OpenAI
 load_dotenv(find_dotenv(), override=True)
-
-from config import GPT_KEY
+GPT_KEY = os.getenv("GPT_KEY")
 client = OpenAI(api_key=GPT_KEY)
 
 response = client.chat.completions.create(
