@@ -55,6 +55,7 @@ def chat_with_openai(prompt):
 
 @app.route('/')
 def index():
+    print("Renderizando la plantilla")
     return render_template('amor.html')
 
 @app.route('/amor', methods=['POST'])
