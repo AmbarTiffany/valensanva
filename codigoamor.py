@@ -11,6 +11,8 @@ load_dotenv(find_dotenv(), override=True)
 GPT_KEY = os.getenv("GPT_KEY")
 client = OpenAI(api_key=GPT_KEY)
 
+print(f"Clave API cargada: {GPT_KEY[:5]}********")
+
 response = client.chat.completions.create(
     model="gpt-3.5-turbo",
     messages=[{"role": "user", "content": "Hola, ¿cómo estás?"}]
