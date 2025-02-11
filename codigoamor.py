@@ -8,7 +8,7 @@ import json
 
 # Cargar la clave de API de OpenAI
 load_dotenv(find_dotenv(), override=True)
-GPT_KEY = os.getenv("GPT_KEY")
+GPT_KEY = os.getenv("OPENAI_API_KEY")
 client = OpenAI(api_key=GPT_KEY)
 
 print(f"Clave API cargada: {GPT_KEY[:5]}********")
