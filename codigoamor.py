@@ -1,18 +1,21 @@
 from flask import Flask, render_template, request, jsonify
-import os
+from dotenv import load_dotenv
 from openai import OpenAI
-from dotenv import load_dotenv, find_dotenv
 import os
 import sys
 import json
 
 # Cargar la clave de API de OpenAI
-load_dotenv()
+
 GPT_KEY = os.getenv("OPENAI_API_KEY")
+if GPT_KEY is None:
+    print("Error: La clave de API de OpenAI no se encuentra en las variables de entorno.")
+    sys.exit(1)  # Detener la ejecución si la clave no está disponible
+
+# Crear el cliente de OpenAI con la clave API
 client = OpenAI(api_key=GPT_KEY)
 
 print(f"Clave API cargada: {GPT_KEY[:5]}********")
-print("Valor de OPENAI_API_KEY:", os.getenv("OPENAI_API_KEY"))
 
 response = client.chat.completions.create(
     model="gpt-3.5-turbo",
