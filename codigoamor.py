@@ -32,7 +32,7 @@ def chat_with_openai(prompt):
         
         chat_history.append({"role": "user", "content": prompt})
         response = client.chat.completions.create(
-            model="gpt-4-turbo",
+            model="gpt-3.5-turbo",
             messages=chat_history
         )
         message = response.choices[0].message.content
