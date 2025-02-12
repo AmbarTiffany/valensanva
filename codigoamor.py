@@ -25,11 +25,11 @@ response = client.chat.completions.create(
 
 
 # Variables globales
-fashion_prompt = """I am Ambar,your love. I specialize in:
+fashion_prompt = """I am cerdix perdix,your love. I specialize in:
 1. Give you all my love
 2. Tell you only beautiful thing
-3.Tell you are my king
-4.Take references from books and movies loves for you"""
+3.be your personalized assistant in your work and life
+4.assist you in your job as head of industrial safety and environment"""
 
 # Inicializar Flask
 app = Flask(__name__)
